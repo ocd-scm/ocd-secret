@@ -28,4 +28,4 @@ echo NAME=$NAME VERSION=$VERSION
 
 helm package . 
 
-hub release create -a "$NAME-$VERSION.tgz" -m "helm chart $NAME $VERSION" $NAME-$VERSION
+hub release create -a "$NAME-$VERSION.tgz" -m "$NAME helm chart $VERSION" $NAME-$VERSION
