@@ -1,0 +1,9 @@
+name: ocd-secret
+description: Creates secrets that can be upgraded and rolled back
+home: https://github.com/ocd-scm/ocd-secret.git
+keywords:
+- ocd
+- secret
+sources:
+- https://github.com/ocd-scm/ocd-secret.git
+version: "1.0.0"
