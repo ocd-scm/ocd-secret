@@ -1,6 +1,14 @@
 # name: The name assigned to the secret
 name: test
+#
+# Either supploy "env_vars" as an array of key+value or supply base64 encoded "data" such as a base64 encoded private key to be a scm-secret 
+#
 # env_vars: The keys and values to make env vars
 env_vars: 
   - key: APP_NAME
     value: BackOffice
+# data: The keys and base64 encoded values
+# data:
+#   - key: ssh-privatekey
+#     value: >-
+#       your_base64_encoded_key
