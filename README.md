@@ -28,6 +28,22 @@ env_vars:
     value: "world"
 ```
 
+The secret can then be mounted as env vars into an `ocd-deploy` release with:
+
+```
+      - secrets:
+        - name: my-secrets
+```
+
+The list of secret names is then evaluated into a list of `envFrom` settings on a deployment. The `envFrom` setting support adding a prefix to all keys that you can set with:
+
+```
+      - secrets:
+        - name: my-secrets
+          prefix: 'FALLBACK_'
+```
+
+
 Note if you use a single Helm Tiller to manage multiple projects that will have different values e.g., different database logins you need the release name, but not the secret name, to be unique. The OCD environment webhook sets an env var "ENV_PREFIX" based on the project name you can use for this purpose:
 
 ```
