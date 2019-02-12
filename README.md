@@ -82,3 +82,5 @@ data:
 ```
 
 The file `scm-private-key` can be git-secret encrypted in which case it is in your `.gitignore` and only the GPG encrypted `scm-private-key.secret` will be in git. See the ocd-scm/ocd-meta wiki about encryption. 
+
+Note that that when `secrets` are changed the pod view of them isn't automatically updated. You need to trigger a redeployment. You can set an helmfile `cleanup` hook below the secret release that does `oc rollout latest dc/app1 -n $PROJECT` for each deployment that uses a given secret. 
